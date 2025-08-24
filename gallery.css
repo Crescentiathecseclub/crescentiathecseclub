@@ -1,0 +1,254 @@
+/* General body styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #FFFFF0; /* Ivory */
+  color: #333F63;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Top header bar */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to top, #333F63, #000000d6);
+  padding: 10px 40px;
+  padding-right: 100px;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.college-logo {
+  height: 100px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 80px;
+  font-size: 18px;
+}
+
+.nav-links a {
+  color: #FFFFF0;
+  text-decoration: none;
+  padding: 6px;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  background-color: #FFFFF0;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Gallery header with gradient */
+.gallery-header {
+  text-align: center;
+  padding: 60px 20px 30px;
+  background: linear-gradient(to bottom, #333F63, #000000d6);
+  color: #FFFFF0;
+}
+
+.gallery-header h1 {
+  font-size: 3em;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Gallery container with vertical flex layout */
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: 50px auto 80px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Each gallery item: flex row with image left, description right */
+.gallery-item {
+  display: flex;
+  align-items: center;
+  height: 300px;
+  background: linear-gradient(to left, #333F63, #000000d6);
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.15);
+}
+
+.gallery-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  margin-right: 25px;
+}
+
+.gallery-description {
+ margin-left: 60px;
+  font-size: 2em;
+  color: #FFFFF0;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* Responsive Design */
+/* Large screens (laptops and desktops) */
+@media (min-width: 1200px) {
+  .gallery-container {
+    max-width: 1100px;
+  }
+  
+  .gallery-item {
+    height: 350px;
+  }
+  
+  .gallery-image {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+/* Medium screens (tablets and smaller laptops) */
+@media (max-width: 900px) {
+  .top-bar {
+    padding: 10px 20px;
+    padding-right: 20px;
+  }
+  
+  .nav-links {
+    gap: 40px;
+  }
+  
+  .college-logo {
+    height: 80px;
+  }
+  
+  .gallery-item {
+    height: auto;
+    padding: 20px;
+  }
+  
+  .gallery-description {
+    margin-left: 30px;
+    font-size: 1.5em;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 20px;
+    font-size: 16px;
+  }
+  
+  .gallery-item {
+    flex-direction: column;
+    height: auto;
+    padding: 15px;
+  }
+  
+  .gallery-image {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .gallery-description {
+    margin-left: 0;
+    text-align: center;
+    font-size: 1.3em;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 600px) {
+  .top-bar {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+  
+  .college-logo {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .gallery-header h1 {
+    font-size: 2em;
+  }
+  
+  .gallery-container {
+    margin: 30px auto 50px;
+    gap: 25px;
+  }
+  
+  .gallery-item {
+    padding: 12px;
+  }
+  
+  .gallery-image {
+    height: 160px;
+  }
+  
+  .gallery-description {
+    font-size: 1.1em;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 320px) {
+  .nav-links {
+    font-size: 14px;
+    gap: 10px;
+  }
+  
+  .gallery-header h1 {
+    font-size: 1.8em;
+  }
+  
+  .gallery-description {
+    font-size: 1em;
+  }
+}
+
+.site-footer {
+  background: linear-gradient(to right, #333F63, #000000d6);
+  padding: 30px 20px;
+  color: #FFFFF0;
+  text-align: center;
+}
